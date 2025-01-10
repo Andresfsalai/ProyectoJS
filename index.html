@@ -1,22 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tiquetera de Conciertos</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <header> </header>
+
+    <header>
+        <img src="./assets/images/ticket.png" alt="Logo del sitio"> 
+        <nav>
+            <a href="#conciertos">Conciertos</a>
+            <a href="#sobre-nosotros">Sobre Nosotros</a>
+            <a href="#contacto">Contáctanos</a>
+        </nav>
+    </header>
+
+    
     <main>
-        <section>
-            <img src="./assets/images/ticket.png" alt="">
-            <h1> TIQUETERA VIRTUAL </h1>
-            <P>En esta tiquetera podrás adquirir tus boletos para tus funciones favoritas</P>
-            <button>¡Adquiere tus boletas aquí!</button> <!-- Este botón estará asociado al js -->
-        </section>
+        <img id="mainImage" src="./assets/images/ticket_banner.png" alt="Imagen principal"> 
+        <h1>Tiquetera de Conciertos</h1>
+
+        
+        <form id="userForm">
+            <label>Nombre: <input type="text" id="nombre" required></label><br>
+            <label>Apellido: <input type="text" id="apellido" required></label><br>
+            <label>Edad: <input type="number" id="edad" min="1" required></label><br>
+            <label>Correo: <input type="email" id="correo" required></label><br>
+            <button type="submit">Continuar</button>
+        </form>
+
+        <div id="concertSelection" style="display: none;">
+            <h2>Selecciona tu concierto:</h2>
+            <div class="concert-card">
+                <img src="./assets/images/música-clásica.jpg" alt="Música Clásica">
+                <p>Música Clásica</p>
+            </div>
+            <div class="concert-card">
+                <img src="./assets/images/rock.jpeg" alt="Rock">
+                <p>Rock</p>
+            </div>
+            <div class="concert-card">
+                <img src="./assets/images/reggaeton.jpeg" alt="Reggaetón">
+                <p>Reggaetón</p>
+            </div>
+        </div>
+
+        <div id="purchaseSummary" style="display: none;">
+            <h2>Resumen de tu Compra</h2>
+            <p id="summary"></p>
+            <button id="confirmPurchase">Confirmar Compra</button>
+        </div>
     </main>
-    <footer>
-        <script src="./home.js"></script>
-    </footer>
+
+    <script src="./home.js"></script>
 </body>
 </html>
